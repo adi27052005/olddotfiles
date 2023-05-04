@@ -55,7 +55,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn jetbrainsmononerdfont:size=10  -nb "#101010" -sb "#808080" -sf "#101010" -h 20 -p "Dmenu" -l 20 -b -c
+bindsym $mod+d exec --no-startup-id rofi -show drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -155,7 +155,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Mod1+q exec "i3-msg exit" 
+bindsym $mod+Shift+q exec "i3-msg exit" 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -207,14 +207,13 @@ default_border pixel 2
 
 # hide_edge_borders horizontal
 
+gaps inner 10
+# smart_gaps inverse_outer
+
 smart_borders on
 
-gaps inner 10
-
-
-
 # class                 border  backgr. text    indicator child_border
-client.focused          #c79c57 #285577 #ffffff #2e9ef4   #c79c57
+client.focused          #dbbc7f #285577 #ffffff #2e9ef4   #dbbc7f
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
