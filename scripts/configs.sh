@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-case "$(printf 'Polybar\nPicom\nAlacritty\ni3wm' | dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000' )" in
+case "$(printf 'Polybar\nPicom\nAlacritty\ni3wm' | rofi -dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000' )" in
 
     'Polybar') 
-        case "$(printf 'Reload\nConfig' | dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000')" in
+        case "$(printf 'Reload\nConfig' | rofi -dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000')" in
         
         'Reload') 
             $HOME/.config/polybar/launch.sh ;;
@@ -16,7 +16,7 @@ case "$(printf 'Polybar\nPicom\nAlacritty\ni3wm' | dmenu -i -p 'Choose' -fn JetB
         esac ;;
 
     'Picom')
-        case "$(printf 'Config' | dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000')" in
+        case "$(printf 'Config' | rofi -dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000')" in
         
         'Config')
             alacritty -e nvim $HOME/.config/picom.conf ;;
@@ -26,7 +26,7 @@ case "$(printf 'Polybar\nPicom\nAlacritty\ni3wm' | dmenu -i -p 'Choose' -fn JetB
         esac ;;
 
     'Alacritty')
-        case "$(printf 'Open\nConfig' | dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000')" in
+        case "$(printf 'Open\nConfig' | rofi -dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000')" in
         
         'Open')
             alacritty ;;
@@ -39,7 +39,7 @@ case "$(printf 'Polybar\nPicom\nAlacritty\ni3wm' | dmenu -i -p 'Choose' -fn JetB
         esac ;;
 
     'i3wm')
-        case "$(printf 'Config\nQuit' | dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000')" in
+        case "$(printf 'Config\nQuit' | rofi -dmenu -i -p 'Choose' -fn JetBrainsMonoNerdFont -nb '#101010' -nf '#d4d4d4' -sb '#808080' -sf '#000000')" in
         
         'Config')
             alacritty -e nvim $HOME/.config/i3/config ;;

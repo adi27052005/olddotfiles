@@ -55,7 +55,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -197,7 +197,8 @@ bindsym $mod+b exec $HOME/.config/scripts/brightness.sh
 bindsym $mod+Shift+w exec firefox
 
 exec_always $HOME/.config/polybar/launch.sh
-exec_always picom &
+# exec_always picom &
+exec_always picom --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 200 &
 exec_always nitrogen --restore &
 
 # default_border pixel 3
